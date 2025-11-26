@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "promatlas"
+version = "0.1.0"
+description = "Piattaforma di analisi del rischio territoriale e settoriale basata su open data italiani."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "PromAtlas Team" }]
+
+dependencies = [
+  "pandas>=2.2.0",
+  "numpy>=1.26.0",
+  "requests>=2.32.0",
+  "openpyxl>=3.1.0",
+  "pyarrow>=16.0.0",
+  "duckdb>=1.0.0",
+  "SQLAlchemy>=2.0.0",
+  "pydantic>=2.0.0",
+  "python-dotenv>=1.0.0",
+  "streamlit>=1.36.0",
+  "plotly>=5.20.0",
+  "folium>=0.16.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "isort",
+  "flake8",
+  "pytest",
+  "mypy"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
