@@ -130,7 +130,7 @@ I file scaricati vengono salvati sotto `data/raw/` e **NON** vengono versionati 
 
 ### Download open data
 
-Esegui lo script di download (in fase di sviluppo):
+Esegui lo script di download per ottenere i dataset open (con fallback offline):
 
 ```bash
 python scripts/download_all_data.py
@@ -139,7 +139,9 @@ python scripts/download_all_data.py
 Lo script:
 
 - crea la struttura `data/raw/<fonte>/`,
-- scarica i file CSV/XLSX necessari per i 3 use case.
+- scarica i file CSV/XLSX necessari per i 3 use case,
+- se il download fallisce (es. offline) salva comunque un campione di dati
+  sintetico per continuare a sviluppare la pipeline.
 
 ### Costruzione database analitico
 
@@ -193,7 +195,7 @@ L'interfaccia offre:
 ## Stato attuale
 
 - [x] Struttura repo
-- [ ] Script download dati
+- [x] Script download dati
 - [ ] Schema DB e tabelle di base
 - [ ] MVP “Italia Credit Risk Atlas”
 - [ ] Modulo “Sector Resilience Radar”
