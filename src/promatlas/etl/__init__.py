@@ -6,4 +6,5 @@ __all__ = [
     "istat_territory",
     "bdap_bilanci",
     "openbilanci",
+    "utils",
 ]
